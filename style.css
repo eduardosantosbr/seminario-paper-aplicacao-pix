@@ -1,3 +1,11 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     margin: auto;
     background: #daf9ff;
@@ -190,4 +198,87 @@ input[type=submit]:hover {
     text-decoration: underline;
     background: rgb(63, 162, 255);
     border-radius: 10px;
+}
+
+
+/*Botão dashboard criar lançamento*/
+
+.dashboard {
+    display: flex;
+    flex-direction: row;  /* Alinhamento na horizontal */
+    justify-content: flex-start; /* Alinhamento à esquerda */
+    padding: 20px;
+}
+
+.btn-criar {
+    padding: 50px 50px;  /* Ajuste do padding para um tamanho mais razoável */
+    font-size: 20px;  /* Ajuste do tamanho da fonte */
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    margin-top: 200px;
+    margin-left: 200px;
+}
+
+.div-criar{
+    padding: 50px 50px;  /* Ajuste do padding para um tamanho mais razoável */
+    font-size: 20px;  /* Ajuste do tamanho da fonte */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-criar:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada ao passar o mouse */
+}
+
+/*card saldo*/
+.card-saldo {
+    background-color: #007bff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;  /* Espaço entre o card e o botão */
+    width: 300px;  /* Largura fixa do card */
+    margin-top: 200px;
+}
+
+.card-saldo h2 {
+    margin-top: 0;
+    color: #dddddd;
+}
+
+.card-saldo p {
+    font-size: 24px;
+    color: #dddddd;
+}
+
+ /**/
+ .card-ultimos-lancamentos {
+    background-color: #007bff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;  /* Espaço entre o card e o botão */
+    width: 300px;  /* Largura fixa do card */
+    margin-top: 200px;
+}
+
+.card-ultimos-lancamentos h2 {
+    margin-top: 0;
+    color: #dddddd;
+}
+
+.card-ultimos-lancamentos p {
+    font-size: 24px;
+    color: #dddddd;
 }

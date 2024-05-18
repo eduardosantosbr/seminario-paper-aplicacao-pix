@@ -28,36 +28,37 @@
         <ul>
 
             <?php 
-                $dados = $conexao->prepare("SELECT * FROM usuarios");
+            if (isset($_SESSION['idUserLogado'])) {
+                $id = $_SESSION['idUserLogado'];
+
+
+                $dados = $conexao->prepare("SELECT * FROM lancamentos WHERE usuario_id = $id");
                 $dados->execute();
-                $usuarios = $dados->fetchAll(PDO::FETCH_OBJ);
-                foreach ($usuarios as $usuario) {
+                $lancamentos = $dados->fetchAll(PDO::FETCH_OBJ);
+                foreach ($lancamentos as $lancamento) {
                     echo "
                     <li>
                         <div class='dados'>
-                            <a href='atualizar-usuarios.php?id=$usuario->id&nome=$usuario->nome&endereco=$usuario->endereco&telefone=$usuario->telefone&usuario=$usuario->usuario'>
                                 <span class='titulo-item-listagem'>
-                                    $usuario->nome
-                                </span> <br>
-                                <div class='descricao-item-listagem'>
-                                    <ul>
-                                        <li>Telefone: $usuario->telefone</li>
-                                        <li>Endereço: $usuario->endereco</li>
-                                        <li>Usuário: $usuario->usuario</li>
-                                    </ul>
-
-                                </div>
-                            </a>
+                                    $lancamento->descricao</br>
+                                    $lancamento->valor</br></br></br>
+                                    Tipo: " . ($lancamento->tipo == 1 ? 'Entrada' : 'Saída') . "<br><br><br>
+                                    $lancamento->dataCriacao
+                                </span>
                         </div>
 
                         <div class='icone-lista'>
-                            <a href='excluir.php?id=$usuario->id' onclick=\"return confirm('Tem certeza que deseja excluir $usuario->nome?'); return false;\">
+                            <a href='excluir.php?id=$lancamento->id' onclick=\"return confirm('Tem certeza que deseja excluir $lancamento->descricao?'); return false;\">
                                 <img src='imagens/excluir.png' alt='Excluir'>
                             </a>
                         </div>
 
                     </li>";
                 }
+            } else {
+                echo "Ops, não foi encontrado nenhum lançamento.";
+                exit;
+            }
             ?>
 
         </ul>

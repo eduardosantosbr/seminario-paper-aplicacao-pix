@@ -17,7 +17,7 @@
 
     <div class="container container-cadastro">
 
-        <h2>Cadastro de usuário</h2>
+        <h2>Cadastro</h2>
         <form action="" method="POST">
             <p>Nome:<input type="text" name="nome" placeholder="Digite seu nome"></p>
             <p>Endereço:<input type="text" name="endereco" placeholder="Digite seu endereço"></p>

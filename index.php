@@ -59,7 +59,7 @@
             header('location:pagina-inicial.php');
         }
 
-        $dados = $conexao->prepare("SELECT senha, nome FROM usuarios WHERE usuario = :usuario;");
+        $dados = $conexao->prepare("SELECT id, senha, nome FROM usuarios WHERE usuario = :usuario;");
         $dados->bindValue(':usuario', $usuario);
         $dados->execute();
 
@@ -71,6 +71,7 @@
                     echo "Tudo certo!";
                     setcookie('nome', $user->nome);
                     $_SESSION['logado'] = true;
+                    $_SESSION['idUserLogado'] = $user->id;
                     header('location:pagina-inicial.php');
 
                 } else {

@@ -19,7 +19,7 @@
                 if ($_SESSION['logado'] == true) {
                     echo '
                     <li><a href="lancamentos.php">Lançamentos</a></li>
-                    <li><a href="cadastro.php">Atualizar dados</a></li>
+                    <li><a href="atualizar-cadastro.php">Atualizar dados</a></li>
                     <li><a href="sair.php">Sair</a></li>';
                 } else {
                     echo '<li><a href="cadastro.php">Abra sua conta</a></li> 
