@@ -40,17 +40,16 @@
                     <li>
                         <div class='dados'>
                                 <span class='titulo-item-listagem'>
-                                    $lancamento->descricao</br>
-                                    $lancamento->valor</br></br></br>
-                                    Tipo: " . ($lancamento->tipo == 1 ? 'Entrada' : 'Saída') . "<br><br><br>
+                                    $lancamento->descricao
+                                    $lancamento->valor
+                                    Tipo: " . ($lancamento->tipo == 1 ? 'Receita' : 'Despesa') . "<br><br><br>
                                     $lancamento->dataCriacao
                                 </span>
                         </div>
 
                         <div class='icone-lista'>
-                            <a href='excluir.php?id=$lancamento->id' onclick=\"return confirm('Tem certeza que deseja excluir $lancamento->descricao?'); return false;\">
-                                <img src='imagens/excluir.png' alt='Excluir'>
-                            </a>
+                                <img src='imagens/joinhaPositivo.png' alt=''>
+                                
                         </div>
 
                     </li>";

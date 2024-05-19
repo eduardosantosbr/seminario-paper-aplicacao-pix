@@ -13,6 +13,9 @@
         session_start();
         require 'modulos.php';
         include 'menu.php';
+
+        // Verifica se o parâmetro 'id' está presente na URL e define o tipo
+        $idTipo = isset($_GET['id']) ? $_GET['id'] : '1';
     ?>
 
     <div class="container container-cadastro">
@@ -22,9 +25,9 @@
             <p>Descrição:<input type="text" name="descricao" placeholder="Digite a descrição"></p>
             <p>Valor:<input type="text" name="valor" placeholder="Digite o valor"></p>
             <p>Tipo: 
-                <select name="tipo">
-                    <option value="1">Receita</option>
-                    <option value="0">Despesa</option>
+                <select name="tipo" disabled>
+                    <option value="1" <?php if ($idTipo == '1') echo 'selected'; ?>>Receita</option>
+                    <option value="0" <?php if ($idTipo == '0') echo 'selected'; ?>>Despesa</option>
                 </select>
             </p>
             <p>Categoria: 
@@ -68,7 +71,7 @@
     if (isset($_POST['cadastrar'])) {
             $descricao = $_POST['descricao'];
             $valor = $_POST['valor'];
-            $tipo = $_POST['tipo'];
+            $tipo = $idTipo;
             $categoria = $_POST['categoria'];
             $dataLancamento = $_POST['dataLancamento'];
             $usuario_id = $id;
