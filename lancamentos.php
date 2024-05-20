@@ -22,34 +22,40 @@
         }
     ?>
 
-
     <div class="container container-listagem">
 
         <ul>
-
             <?php 
             if (isset($_SESSION['idUserLogado'])) {
                 $id = $_SESSION['idUserLogado'];
 
-
-                $dados = $conexao->prepare("SELECT * FROM lancamentos WHERE usuario_id = $id");
+                $dados = $conexao->prepare("SELECT * FROM lancamentos WHERE usuario_id = :id");
+                $dados->bindValue(':id', $id, PDO::PARAM_INT);
                 $dados->execute();
                 $lancamentos = $dados->fetchAll(PDO::FETCH_OBJ);
                 foreach ($lancamentos as $lancamento) {
+                    $imagem = $lancamento->tipo == 1 ? 'imagens/joinhaPositivo.png' : 'imagens/joinhaNegativo.png';
+                    $valor = $lancamento->tipo == 1 ? "R$ " . $lancamento->valor : "R$ " . "-" . $lancamento->valor;
+
                     echo "
                     <li>
                         <div class='dados'>
-                                <span class='titulo-item-listagem'>
-                                    $lancamento->descricao
-                                    $lancamento->valor
-                                    Tipo: " . ($lancamento->tipo == 1 ? 'Receita' : 'Despesa') . "<br><br><br>
-                                    $lancamento->dataCriacao
-                                </span>
+                            <div class='dados-descricao'>
+                                    <span class='titulo-item-listagem-descricao'>
+                                        $lancamento->descricao
+                                    </span>
+                            </div>
+                            <div class='dados-valor'>
+                                    <span class='titulo-item-listagem-valor'>
+                                        $valor<br><br>
+                                    </span>
+                            </div>
+                            <div class='icone-lista'>
+                                    <img src='$imagem' alt=''>
+                            </div>
                         </div>
-
-                        <div class='icone-lista'>
-                                <img src='imagens/joinhaPositivo.png' alt=''>
-                                
+                        <div>
+                            $lancamento->dataCriacao
                         </div>
 
                     </li>";
@@ -59,11 +65,9 @@
                 exit;
             }
             ?>
-
         </ul>
 
     </div>
-
 
 </body>
 

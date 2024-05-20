@@ -1,0 +1,184 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/*Botão dashboard criar lançamento*/
+.dashboard {
+    display: flex;
+    flex-direction: row;  /* Alinhamento na horizontal */
+    justify-content: flex-start; /* Alinhamento à esquerda */
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-criar {
+    padding: 50px 50px;  /* Ajuste do padding para um tamanho mais razoável */
+    font-size: 20px;  /* Ajuste do tamanho da fonte */
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    margin-top: 200px;
+    margin-left: 200px;
+}
+
+.btn-criar:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada ao passar o mouse */
+}
+
+/*card saldo*/
+.card-saldo {
+    background-color: #007bff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;  /* Espaço entre o card e o botão */
+    width: 22px;  /* Largura fixa do card */
+    margin-top: 200px;
+}
+
+.card-saldo h2 {
+    margin-top: 0;
+    color: #dddddd;
+}
+
+.card-saldo p {
+    font-size: 24px;
+    color: #dddddd;
+}
+
+ /**/
+ .card-ultimos-lancamentos {
+    background-color: #007bff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;  /* Espaço entre o card e o botão */
+    width: 22px;  /* Largura fixa do card */
+    margin-top: 200px;
+}
+
+.card-ultimos-lancamentos h2 {
+    margin-top: 0;
+    color: #dddddd;
+}
+
+.card-ultimos-lancamentos p {
+    font-size: 24px;
+    color: #dddddd;
+}
+
+.div-criar-despesa, .div-criar-receita, .div-criar-pagar, .div-criar-receber {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.div-criar-despesa {
+    width: 7%;
+    background-color: #e74c3c;
+}
+
+.btn-criar-despesa {
+    background-color: #e74c3c;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.div-criar-receita {
+    width: 7%;
+    background-color: #2ecc71;
+}
+
+.btn-criar-receita {
+    background-color: #2ecc71;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.div-criar-pagar {
+    width: 7%;
+    background-color: #f1c40f;
+}
+
+.btn-criar-pagar {
+    background-color: #f1c40f;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.div-criar-receber {
+    width: 7%;
+    background-color: #3498db;
+}
+
+.btn-criar-receber {
+    background-color: #3498db;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.div-criar-despesa:hover, .div-criar-receita:hover, .div-criar-pagar:hover, .div-criar-receber:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.card-saldo, .card-ultimos-lancamentos {
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #3498db;
+    text-align: center;
+}
+
+.card-saldo h2, .card-ultimos-lancamentos h2 {
+    margin-bottom: 10px;
+}
+
+.card-ultimos-lancamentos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card-ultimos-lancamentos li {
+    margin-bottom: 5px;
+}
