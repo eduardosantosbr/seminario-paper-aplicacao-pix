@@ -5,7 +5,17 @@
     <meta charset="UTF-8">
     <title>Página Inicial</title>
     <link rel="stylesheet" href="dashboard.css">
-
+    <style>
+    .dados-valor {
+        font-size: 16px;
+    }
+    .tipo-1 {
+        color: black;
+    }
+    .tipo-0 {
+        color: red;
+    }
+</style>
 </head>
 
 <body>
@@ -28,6 +38,13 @@
         $dados->bindValue(':id', $id, PDO::PARAM_INT);
         $dados->execute();
         $objSaldo = $dados->fetchAll(PDO::FETCH_OBJ);
+
+
+        $dadosUltimosLancamentos = $conexao->prepare("SELECT descricao, valor, tipo FROM `lancamentos` WHERE usuario_id = :id LIMIT 0,5");
+        $dadosUltimosLancamentos->bindValue(':id', $id, PDO::PARAM_INT);
+        $dadosUltimosLancamentos->execute();
+        $objDadosUltimosLancamentos = $dadosUltimosLancamentos->fetchAll(PDO::FETCH_OBJ);
+
     ?>
 
     <div class="container">
@@ -75,17 +92,30 @@
             <div class="card-ultimos-lancamentos">
                 <h2>Ultimos lançamentos</h2>
                 <ul>
-                    <li>R$ 1.234,56...</li>
-                    <li>R$ 1.234,56...</li>
-                    <li>R$ 1.234,56...</li>
-                    <li>R$ 1.234,56...</li>
-                    <li>R$ 1.234,56...</li>
-                    <li>R$ 1.234,56...</li>
+                <?php
+                    foreach ($objDadosUltimosLancamentos as $lancamento) {
+                        $descricao = $lancamento->descricao;
+                        if (strlen($descricao) > 5) {
+                            $descricao = substr($descricao, 0, 10) . '...';
+                        }
+                        $valorFormatado = number_format($lancamento->valor, 2, ',', '.');
+                        $valorClass = $lancamento->tipo == 1 ? 'tipo-1' : 'tipo-0';
+                        echo "
+                        <li>
+                            <div class='dados'>
+                                <div class='dados-descricao'>
+                                    $descricao
+                                </div>
+                                <div class='dados-valor $valorClass'>
+                                    $valorFormatado
+                                </div>
+                            </div>
+                        </li>";
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
     </div>
-
 </body>
-
 </html>
