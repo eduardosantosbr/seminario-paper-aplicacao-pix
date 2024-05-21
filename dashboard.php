@@ -6,10 +6,6 @@
     <title>Página Inicial</title>
     <link rel="stylesheet" href="dashboard.css">
 
-    <style>
-
-       
-    </style>
 </head>
 
 <body>
@@ -39,7 +35,7 @@
     </div>
 
     <div class="dashboard">
-        <!-- <div class="div-criar"> -->
+        <div class="div-criar">
             <div class="div-criar-despesa">
                 <form action="cadastro-lancamento.php?id=0" method="post">
                     <button id="criarLancamento" class="btn-criar-despesa" onclick="">Despesa</button>
@@ -63,9 +59,9 @@
                     <button id="criarLancamento" class="btn-criar-receber" onclick="">Receber</button>
                 </form>
             </div>
-        <!-- </div>
+        </div>
 
-        <div class="div-card"> -->
+        <div class="div-card">
             <div class="card-saldo">
                 <h2>Saldo atual</h2>
                 <p>R$ <?php echo number_format($objSaldo[0]->saldo_total, 2, ',', '.'); ?></p>
@@ -84,9 +80,10 @@
                     <li>R$ 1.234,56...</li>
                     <li>R$ 1.234,56...</li>
                     <li>R$ 1.234,56...</li>
+                    <li>R$ 1.234,56...</li>
                 </ul>
             </div>
-        <!-- </div> -->
+        </div>
     </div>
 
 </body>
