@@ -21,7 +21,7 @@
     <div class="container container-login">
         <form action="" method="POST">
             <center>
-                <h2>Sistema PIX</h2>
+                <h2>Lançamentos Financeiros</h2>
             </center>
             <h3>Login</h3>
             <p>Usuário<input type="text" name="usuario" placeholder="Digite seu usuário..." value=<?php if (isset( $_COOKIE['usuario'] )) {

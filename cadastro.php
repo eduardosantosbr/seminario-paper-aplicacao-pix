@@ -53,7 +53,8 @@
             $usuario = $_POST['usuario'];
             $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
             $cadastro = $conexao->prepare(
-                "INSERT INTO usuarios (nome, endereco, telefone, usuario, senha) VALUES (:nome, :endereco, :telefone, :usuario, :senha);"
+                "INSERT INTO usuarios (nome, endereco, telefone, usuario, senha) 
+                 VALUES (:nome, :endereco, :telefone, :usuario, :senha);"
             );
             $cadastro->bindValue(":nome", $nome);
             $cadastro->bindValue(":endereco", $endereco);

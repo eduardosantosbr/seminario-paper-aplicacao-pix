@@ -67,14 +67,18 @@
         if (existe_usuario($usuario, $usuario)) { 
             aviso_usuario_existente();
         } else {
-            $atualizacao = $conexao->prepare("UPDATE usuarios SET nome=:nome, endereco=:endereco, telefone=:telefone, usuario=:usuario WHERE id=:id;");
+            $atualizacao = $conexao->prepare(
+                "UPDATE usuarios 
+                    SET nome=:nome, endereco=:endereco, telefone=:telefone, usuario=:usuario 
+                 WHERE id=:id;");
             $atualizacao->bindValue(':nome', $nome);
             $atualizacao->bindValue(':endereco', $endereco);
             $atualizacao->bindValue(':telefone', $telefone);
             $atualizacao->bindValue(':usuario', $usuario);
             $atualizacao->bindValue(':id', $id);
             $atualizacao->execute();
-            header('Location: listar-usuarios.php');
+            setcookie('nome', $nome);
+            header('Location: atualizar-cadastro.php');
         }
     }
-?>
+    ?>

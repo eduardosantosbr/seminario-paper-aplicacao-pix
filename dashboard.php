@@ -65,7 +65,7 @@
                 </form>
             </div>
 
-            <div class="div-criar-pagar">
+            <!-- <div class="div-criar-pagar">
                 <form action="pagar.php" method="post">
                     <button id="criarLancamento" class="btn-criar-pagar" onclick="">Pagar</button>
                 </form>
@@ -75,7 +75,7 @@
                 <form action="receber.php" method="post">
                     <button id="criarLancamento" class="btn-criar-receber" onclick="">Receber</button>
                 </form>
-            </div>
+            </div> -->
         </div>
 
         <div class="div-card">

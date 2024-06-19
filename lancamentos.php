@@ -55,7 +55,7 @@
                             </div>
                         </div>
                         <div>
-                            $lancamento->dataCriacao
+                            $lancamento->dataLancamento
                         </div>
 
                     </li>";
